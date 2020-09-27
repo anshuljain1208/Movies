@@ -67,15 +67,22 @@ enum MovieDetailCellProvider {
     tableView.register(MovieTableViewRatingCell.self, forCellReuseIdentifier: "MovieTableViewRatingCell")
     tableView.register(MovieTableViewFooterCell.self, forCellReuseIdentifier: "MovieTableViewFooterCell")
     tableView.register(MovieTableViewCriticsCell.self, forCellReuseIdentifier: "MovieTableViewCriticsCell")
+    tableView.register(MovieTableViewTitleCell.self, forCellReuseIdentifier: "MovieTableViewTitleCell")
   }
 
   static func cellFor(indexPath: IndexPath, tableView: UITableView) -> UITableViewCell {
     switch type(forIndexPath: indexPath) {
-    case .title, .year, .writer, .actors, .director, .category:
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCastCell", for: indexPath) as? MovieTableViewCastCell else {
-        fatalError("MovieTableViewCastCell should not be nil")
+    case .title, .year:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewTitleCell", for: indexPath) as? MovieTableViewTitleCell else {
+        fatalError("MovieTableViewTitleCell should not be nil")
       }
       return cell
+      case .writer, .actors, .director, .category:
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCastCell", for: indexPath) as? MovieTableViewCastCell else {
+          fatalError("MovieTableViewCastCell should not be nil")
+        }
+        return cell
+
     case .rating:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewRatingCell", for: indexPath) as? MovieTableViewRatingCell else {
         fatalError("MovieTableViewRatingCell should not be nil")

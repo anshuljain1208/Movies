@@ -31,7 +31,7 @@ class MovieDetailViewController: UITableViewController {
     tableView.allowsSelection = false
     tableView.separatorStyle = .none
     MovieDetailCellProvider.registerCells(tableView: tableView)
-    tableView.estimatedRowHeight = 44.0
+    tableView.estimatedRowHeight = UITableView.automaticDimension
     tableView.rowHeight = UITableView.automaticDimension
   }
 

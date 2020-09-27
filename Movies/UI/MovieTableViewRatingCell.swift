@@ -124,18 +124,18 @@ class MovieTableViewCriticsCell: UITableViewCell {
     leftTitleLabel.alignEdgesToSuperView([.left, .top], inset: UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12))
     leftSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
     leftSubtitleLabel.centerXAnchor.constraint(equalTo: leftTitleLabel.centerXAnchor).isActive = true
-    leftSubtitleLabel.topAnchor.constraint(equalTo: leftTitleLabel.bottomAnchor, constant: 8).isActive = true
+    leftSubtitleLabel.topAnchor.constraint(equalTo: leftTitleLabel.bottomAnchor, constant: 4).isActive = true
 
     centerTitleLabel.alignEdgesToSuperView([.top], inset: UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12))
     centerTitleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
     centerSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
     centerSubtitleLabel.centerXAnchor.constraint(equalTo: centerTitleLabel.centerXAnchor).isActive = true
-    centerSubtitleLabel.topAnchor.constraint(equalTo: centerTitleLabel.bottomAnchor, constant: 8).isActive = true
+    centerSubtitleLabel.topAnchor.constraint(equalTo: centerTitleLabel.bottomAnchor, constant: 4).isActive = true
 
     rightTitleLabel.alignEdgesToSuperView([.right, .top], inset: UIEdgeInsets(top: 4, left: 12, bottom: 4, right: -12))
     rightSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
     rightSubtitleLabel.centerXAnchor.constraint(equalTo: rightTitleLabel.centerXAnchor).isActive = true
-    rightSubtitleLabel.topAnchor.constraint(equalTo: rightTitleLabel.bottomAnchor, constant: 8).isActive = true
+    rightSubtitleLabel.topAnchor.constraint(equalTo: rightTitleLabel.bottomAnchor, constant: 4).isActive = true
 
     let constraint = heightAnchor.constraint(equalToConstant: 75)
     constraint.priority = .init(rawValue: 999)

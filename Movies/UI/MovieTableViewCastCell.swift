@@ -41,6 +41,7 @@ class MovieTableViewCastCell: UITableViewCell {
     subtitleLabel.font = UIFont.systemFont(ofSize: 14)
     titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
     subtitleLabel.textColor = #colorLiteral(red: 0.2941176471, green: 0.2941176471, blue: 0.2941176471, alpha: 1)
+    
   }
   
   override func prepareForReuse() {
@@ -49,5 +50,17 @@ class MovieTableViewCastCell: UITableViewCell {
     subtitleLabel.numberOfLines = 0
     titleLabel.numberOfLines = 0
   }
+}
+
+class MovieTableViewTitleCell: MovieTableViewCastCell {
+  
+  override func setup() {
+    contentView.addSubview(titleLabel)
+    titleLabel.alignEdgesToSuperView([.left, .top], inset: UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12))
+    contentView.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
+    titleLabel.numberOfLines = 0
+    titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
+  }
+  
 }
 
